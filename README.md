@@ -22,6 +22,21 @@ This project is a Python-based, distributed, decentralized agentic AI system des
 - **Distributed Systems & Messaging**
 - **Security & Privacy Best Practices**
 
+## MCP Features & Best Practices
+
+This project will provide comprehensive features and practical guides for working with the Model Context Protocol (MCP) in Python, including:
+
+- **Python MCP SDK**: How to build and extend an MCP server using the official SDK.
+- **MCP Elicitation**: Techniques for eliciting context and requirements from agents and clients.
+- **MCP Sampling**: Methods for sampling and managing context data within MCP workflows.
+- **MCP Authorization**: Implementing robust authorization mechanisms for secure access.
+- **MCP Security Considerations**: Best practices for securing MCP servers and communications.
+- **Deploying MCP Servers with oAuth**: Step-by-step deployment with modern authentication.
+- **Configuring/Connecting MCP Servers with AI Agents and Agentic AI**: Integrating MCP with distributed agentic systems.
+- **Testing of Remote MCP Servers**: Strategies and tools for validating remote MCP server functionality.
+
+This section will be regularly updated with code samples, configuration tips, and troubleshooting advice to help contributors and users effectively leverage MCP in distributed agentic AI systems.
+
 ## Getting Started
 1. **Clone the Repository**
 2. **Set up Python Environment**
