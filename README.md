@@ -1,4 +1,4 @@
-# Distributed Decentralized Agentic AI for Fintech Loan Applications
+# Decentralized Distributed Agentic AI Framework (DDAAIF)
 
 > :rocket: **Project Status**: Early Development
 > 
@@ -7,10 +7,12 @@
 > - [ ] Python Implementation (`main` branch)
 > - [ ] TypeScript Implementation (planned: `typescript` branch)
 > - [ ] .NET Implementation (planned: `dotnet` branch)
+> - [ ] Go (planned: `Go` branch)
+> - [ ] Java (planned: `Java` branch)
 > 
 > :handshake: **Contributors Welcome!** Check out our [good first issues](../../issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue") for each implementation.
 
-This project implements a distributed, decentralized agentic AI system designed for the end-to-end loan application and approval process in Fintech. It leverages standard protocols such as **A2A (Agent-to-Agent)**, **MCP (Model Context Protocol)**, and **AP2 (Agent Protocol 2)** to ensure interoperability, security, and scalability across multiple technology stacks.
+This project implements a distributed, decentralized agentic AI system framework which is further designed for the end-to-end loan application and approval process in Fintech. It leverages standard protocols such as **A2A (Agent-to-Agent)**, **MCP (Model Context Protocol)**, and **AP2 (Agent Protocol 2)** to ensure interoperability, security, and scalability across multiple technology stacks.
 
 ## Key Features
 - **Distributed & Decentralized**: Agents operate across multiple nodes, ensuring resilience and no single point of failure.
@@ -24,7 +26,8 @@ This project implements a distributed, decentralized agentic AI system designed 
 - **Credit Scoring & Risk Assessment**
 - **Document Verification**
 - **Approval/Denial Decisioning**
-- **Notifications & Audit Trail**
+- **Payment Processing & Disbursement** (AP2-enabled)
+- **Automated Repayment Scheduling** (AP2-enabled)
 - **Notifications & Audit Trail**
 
 ## Distributed Decentralized Agent Architecture
@@ -91,10 +94,17 @@ System Architecture:
        └──────────►└──────────────┘
        │
        │           ┌──────────────┐
-       └──────────►│Loan Process  │    Note: Loan Agent connects to both
-                  │MCP Server    │    Credit Score and Loan Process MCP
-                  │[Loan DB]     │    servers as an example of multi-server
-                  └──────────────┘    connectivity
+       └──────────►│Loan Process  │    Note: Loan Agent connects to
+                  │MCP Server    │    multiple specialized servers:
+                  │[Loan DB]     │    - Credit Score MCP
+                  └──────┬───────┘    - Loan Process MCP
+                        │            - AP2 Payment Server
+                        ▼
+                  ┌──────────────┐
+                  │AP2 Payment   │
+                  │Server        │
+                  │[PaymentQueue]│
+                  └──────────────┘
 ```
 
 Each box represents an autonomous agent with both A2A Server and MCP Client capabilities. The Controller Agent acts as the main MCP Server for external clients while routing requests to specialized agents. All connections between components use OAuth with separate providers for security isolation. Each agent maintains its own storage system (database or queue) for persistence.
@@ -112,16 +122,29 @@ Notes:
 - Each agent's MCP Client may be configured with one or more MCP Server endpoints (for redundancy and multi-region deployment).
 - The Controller Agent provides a single well-known MCP Server endpoint for external MCP clients; internal routing and discovery can be performed using service registry or secure discovery channels.
 
-## Technologies & Standards
-- **Typescript**
-- **.NET, C#**
-- **Python 3.x**
-- **A2A, MCP, AP2 Protocols**
-- **Distributed Systems & Messaging**
-- **Security & Privacy Best Practices**
+## Technologies, Standards & SDKs
+- **Typescript**: ([docs](https://github.com/modelcontextprotocol/typescript-sdk))
+- **.NET, C#**: ([docs](https://github.com/modelcontextprotocol/csharp-sdk))
+- **Python**: ([docs](https://github.com/modelcontextprotocol/python-sdk))
+- **Go**: ([docs](https://github.com/modelcontextprotocol/go-sdk))
+- **Java**: ([docs](https://github.com/modelcontextprotocol/java-sdk))
+
+## Protocols
+- **MCP: Model-Context-Protocol**: ([Specifications](https://modelcontextprotocol.io/specification/2025-06-18))
+- **A2A: Agent-to-Agent**: ([docs](https://a2a-protocol.org/latest/specification/))
+- **AP2: Agent Payments Protocol**: ([docs](https://github.com/google-agentic-commerce/AP2)) - Google's secure protocol for automated financial transactions
+  - Secure payment processing and disbursement
+  - Automated repayment scheduling
+  - Multi-currency support
+  - Regulatory compliance handling
+  - Audit trail generation
+- **JSON-RPC 2.0**
+- **gRPC**
+- **HTTP+JSON/REST Transport**: Production must use TLS 1.3+
 
 ## Development Tools
 - **Visual Studio Code Insiders**: IDE Supports MCP development and testing (https://code.visualstudio.com/insiders/)
+- **MCP Inspector**: ([How to install and run the tool](https://github.com/modelcontextprotocol/inspector))
 
 ## MCP Features & Best Practices
 
@@ -146,6 +169,13 @@ This section will be regularly updated with code samples, configuration tips, an
 ## Multi-Agent (A2A) Features & Best Practices
 **TBD**: Coming soon!
 
+## Deployment Environments
+- **Localhost**
+- **Cloudflare**
+- **Azure, API Management**
+- **AWS**
+- **GCP**
+
 ## Getting Started
 1. **Clone the Repository**
 2. **Set up Python Environment**
@@ -161,4 +191,13 @@ See the full text in the `LICENSE` file.
 
 ## Contact
 For questions or collaboration, open an issue or submit a pull request.
-Or contact [@irabanta](https://github.com/irabanta)
+
+You can reach out him using any of these handle:
+
+([Github @irabanta](https://github.com/irabanta))
+
+([Linkedin @Chingangbam Irabanta](https://www.linkedin.com/in/chingangbam-irabanta-2918095/))
+
+([Facebook @irabantas](https://www.facebook.com/irabantas))
+
+Email: irabanta@gmail.com
