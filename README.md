@@ -123,11 +123,11 @@ Notes:
 - The Controller Agent provides a single well-known MCP Server endpoint for external MCP clients; internal routing and discovery can be performed using service registry or secure discovery channels.
 
 ## Technologies, Standards & SDKs
-- **Typescript**: ([docs](https://github.com/modelcontextprotocol/typescript-sdk))
-- **.NET, C#**: ([docs](https://github.com/modelcontextprotocol/csharp-sdk))
-- **Python**: ([docs](https://github.com/modelcontextprotocol/python-sdk))
-- **Go**: ([docs](https://github.com/modelcontextprotocol/go-sdk))
-- **Java**: ([docs](https://github.com/modelcontextprotocol/java-sdk))
+- **Typescript**: ([MCP](https://github.com/modelcontextprotocol/typescript-sdk)), ([A2A](https://github.com/a2aproject/a2a-java))
+- **.NET, C#**: ([MCP](https://github.com/modelcontextprotocol/csharp-sdk)), ([A2A](https://github.com/a2aproject/a2a-dotnet))
+- **Python**: ([MCP](https://github.com/modelcontextprotocol/python-sdk)), ([A2A](https://github.com/a2aproject/a2a-python))
+- **Go**: ([MCP](https://github.com/modelcontextprotocol/go-sdk)), ([A2A](https://github.com/a2aproject/a2a-go))
+- **Java**: ([MCP](https://github.com/modelcontextprotocol/java-sdk)), ([A2A](https://github.com/a2aproject/a2a-java))
 
 ## Protocols
 - **MCP: Model-Context-Protocol**: ([Specifications](https://modelcontextprotocol.io/specification/2025-06-18))
@@ -167,7 +167,16 @@ This project will provide comprehensive features and practical guides for workin
 This section will be regularly updated with code samples, configuration tips, and troubleshooting advice to help contributors and users effectively leverage MCP in distributed agentic AI systems.
 
 ## Multi-Agent (A2A) Features & Best Practices
-**TBD**: Coming soon!
+- **Specifications**: ([docs](https://a2a-protocol.org/latest/specification/))
+
+## Security Considerations
+- **Authentication & Authorization (oAuth 2.0)**
+- **Risk of Vibe coding**
+- **Excesive Permission**
+- **Agent Error**
+- **Prompt injection**
+- **Confused Deputy**
+- **Session Hijacking**
 
 ## Deployment Environments
 - **Localhost**
