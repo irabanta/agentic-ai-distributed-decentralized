@@ -122,6 +122,9 @@ Notes:
 - Each agent's MCP Client may be configured with one or more MCP Server endpoints (for redundancy and multi-region deployment).
 - The Controller Agent provides a single well-known MCP Server endpoint for external MCP clients; internal routing and discovery can be performed using service registry or secure discovery channels.
 
+## Approach of Development
+Development approach will be bottom-up. This means we will be starting by developing MCP Servers like Loan Process, Credit Score, Document Store, Rules Engine, Queue MCP. After that, we will build the Agents and Controller Agent.
+
 ## Technologies, Standards & SDKs
 - **Typescript**: ([MCP](https://github.com/modelcontextprotocol/typescript-sdk)), ([A2A](https://github.com/a2aproject/a2a-java))
 - **.NET, C#**: ([MCP](https://github.com/modelcontextprotocol/csharp-sdk)), ([A2A](https://github.com/a2aproject/a2a-dotnet))
@@ -187,8 +190,8 @@ This section will be regularly updated with code samples, configuration tips, an
 
 ## Getting Started
 1. **Clone the Repository**
-2. **Set up Python Environment**
-3. **Install Dependencies** (requirements.txt to be provided)
+2. **Chose your tech stack from the repository (example: typescript)**
+3. **Install Dependencies** (npx ....)
 4. **Run Example Agents**
 
 ## Contributing
