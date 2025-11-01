@@ -113,6 +113,8 @@ Notes:
 - The Controller Agent provides a single well-known MCP Server endpoint for external MCP clients; internal routing and discovery can be performed using service registry or secure discovery channels.
 
 ## Technologies & Standards
+- **Typescript**
+- **.NET, C#**
 - **Python 3.x**
 - **A2A, MCP, AP2 Protocols**
 - **Distributed Systems & Messaging**
@@ -123,19 +125,26 @@ Notes:
 
 ## MCP Features & Best Practices
 
-This project will provide comprehensive features and practical guides for working with the Model Context Protocol (MCP) in Python, including:
+This project will provide comprehensive features and practical guides for working with the Model Context Protocol (MCP), including:
 
-- **Python MCP SDK**: How to build and extend an MCP server using the official SDK.
-- **MCP Elicitation**: Techniques for eliciting context and requirements from agents and clients.
-- **MCP Sampling**: Methods for sampling and managing context data within MCP workflows.
-- **MCP Authentication**: Implementing robust authentication with oAuth.
-- **MCP Authorization**: Implementing robust authorization mechanisms for secure access.
-- **MCP Security Considerations**: Best practices for securing MCP servers and communications.
+- **MCP Lifecycle** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle)): Lifecycle for the client-server connections that ensures proper capability negotiation and state management.
+- **MCP Transports** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports)): Standard transport mechanisms for client-server communication.
+- **MCP Prompts** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/server/prompts)): provides a standardized way for servers to expose prompt templates to clients.
+- **MCP Resources** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/server/resources)): provides a standardized way for servers to expose resources to clients.
+- **MCP Tools** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)): allows servers to expose tools that can be invoked by language models.
+- **MCP Elicitation** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation)): Techniques for eliciting context and requirements from agents and clients.
+- **MCP Sampling** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling)): Methods for sampling and managing context data within MCP workflows.
+- **MCP Authentication** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)): Implementing robust authentication with oAuth.
+- **MCP Authorization** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)): Implementing robust authorization mechanisms for secure access.
+- **MCP Security Considerations** ([docs](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)): Best practices for securing MCP servers and communications.
 - **Deploying MCP Servers with oAuth**: Step-by-step deployment with modern authentication.
 - **Configuring/Connecting MCP Servers with AI Agents and Agentic AI**: Integrating MCP with distributed agentic systems.
 - **Testing of Remote MCP Servers**: Strategies and tools for validating remote MCP server functionality.
 
 This section will be regularly updated with code samples, configuration tips, and troubleshooting advice to help contributors and users effectively leverage MCP in distributed agentic AI systems.
+
+## Multi-Agent (A2A) Features & Best Practices
+**TBD**: Coming soon!
 
 ## Getting Started
 1. **Clone the Repository**
