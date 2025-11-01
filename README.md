@@ -1,4 +1,4 @@
-# Decentralized Distributed Agentic AI Framework (DDAAIF)
+# Decentralized Agentic AI Framework (DAAIF)
 
 > :rocket: **Project Status**: Early Development
 > 
