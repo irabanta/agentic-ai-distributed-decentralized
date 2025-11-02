@@ -4,7 +4,7 @@ This directory contains multiple Model Context Protocol (MCP) servers, each serv
 
 ## Server Template Reference
 
-The `server-template-mcp-server` folder contains a complete working MCP server implementation that can be used as a reference for creating new MCP servers. This template demonstrates best practices and includes basic configurations for quick start.
+The `template-mcp-server` folder contains a complete working MCP server implementation that can be used as a reference for creating new MCP servers. This template demonstrates best practices and includes basic configurations for quick start.
 
 ## Development
 
