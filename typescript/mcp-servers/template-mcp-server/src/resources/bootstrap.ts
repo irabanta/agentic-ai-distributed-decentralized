@@ -1,5 +1,5 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { MyCustomResource } from './MyCustomResource.js';
+import { BankPaymentGuideResource } from './BankPaymentGuideResource.js';
 
 /** Manage all tools */
 export class ResourcesBootstrap {
@@ -13,7 +13,7 @@ export class ResourcesBootstrap {
     protected async registerResources(_server: McpServer): Promise<void> {
         // Register resource implementations here
         return new Promise((resolve) => {
-            MyCustomResource.register(_server);
+            BankPaymentGuideResource.register(_server);
             //TODO: Add more prompts here
 
             resolve();

@@ -1,6 +1,6 @@
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { MyCustomPrompt } from './MyCustomPrompt.js';
+import { AccountBalanceInquiryPrompt } from './AccountBalanceInquiryPrompt.js';
 
 /** Manage all prompts */
 export class PromptsBootstrap {
@@ -14,7 +14,7 @@ export class PromptsBootstrap {
     protected async registerPrompts(_server: McpServer): Promise<void> {
         // Register prompts implementations here
         return new Promise((resolve) => {
-            MyCustomPrompt.register(_server);
+            AccountBalanceInquiryPrompt.register(_server);
             //TODO: Add more prompts here
 
             resolve();
