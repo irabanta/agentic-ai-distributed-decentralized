@@ -13,7 +13,7 @@
 > 
 > :handshake: **Contributors Welcome!** Check out our [good first issues](../../issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue") for each implementation.
 
-This project implements a distributed, decentralized agentic AI system framework which is further designed for the end-to-end loan application and approval process in Fintech. It leverages standard protocols such as **A2A (Agent-to-Agent)**, **MCP (Model Context Protocol)**, and **AP2 (Agent Protocol 2)** to ensure interoperability, security, and scalability across multiple technology stacks.
+This project implements a distributed, decentralized agentic AI system framework which is further designed for the end-to-end loan application and approval process in Fintech. It leverages standard protocols such as **A2A (Agent-to-Agent)**, **MCP (Model Context Protocol)**, and **AP2 (Agent Payment Protocol)** to ensure interoperability, security, and scalability across multiple technology stacks.
 
 ## Key Features
 - **Distributed & Decentralized**: Agents operate across multiple nodes, ensuring resilience and no single point of failure.
@@ -36,6 +36,7 @@ As a reference implementation, the framework showcases its capabilities through 
 - **Payment Processing & Disbursement** (AP2-enabled)
 - **Automated Repayment Scheduling** (AP2-enabled)
 - **Notifications & Audit Trail**
+- **Detect Anomalies**
 
 ## Distributed Decentralized Agent Architecture
 
