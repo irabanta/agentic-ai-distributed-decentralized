@@ -34,6 +34,22 @@ Available MCP servers:
 - rule-engine-mcp-server
 - server-template-mcp-server
 
+## Using MCP Inspector
+
+To inspect and interact with your running MCP server, you can use the MCP Inspector. Ensure the PORT number as per your server configuration! Launch it using the following command:
+
+```bash
+npx @modelcontextprotocol/inspector --transport http --endpoint http://localhost:{port}/mcp
+```
+
+OR simply start the MCP Inspector and configure any MCP Server URL by yourself.
+
+```bash
+npx @modelcontextprotocol/inspector
+```
+
+This will open the MCP Inspector in your default browser, allowing you to explore the server's endpoints, test prompts, and debug responses.
+
 ## Production Build and Deployment
 
 To prepare and run a server in production:

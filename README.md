@@ -4,7 +4,7 @@
 > 
 > :package: **Implementation Status**:
 > - [x] Architecture Design
-> - [ ] TypeScript Implementation (planned: `typescript` branch)
+> - [ ] TypeScript Implementation (planned: `typescript` branch) - In Progress
 > - [ ] Python Implementation (`main` branch)
 > - [ ] .NET Implementation (planned: `dotnet` branch)
 > - [ ] Go (planned: `Go` branch)
