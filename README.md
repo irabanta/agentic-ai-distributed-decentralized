@@ -9,14 +9,7 @@
 > - [ ] .NET Implementation (planned: `dotnet` branch)
 > - [ ] Go (planned: `Go` branch)
 > - [ ] Java (planned: `Java` branch)
-> - [ ] High Availability & Fault Tolerance
-> - [ ] Monitoring & Observability
-> - [ ] State Management
-> - [ ] Error Handling & Recovery
-> - [ ] Scalability Enhancements
-> - [ ] Security Enhancements
-> - [ ] Data Consistency
-> - [ ] DevOps & Deployment
+> - [ ] Distributed Decentralized System Architecture
 > 
 > :handshake: **Contributors Welcome!** Check out our [good first issues](../../issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue") for each implementation.
 
@@ -28,6 +21,12 @@ This project implements a distributed, decentralized agentic AI system framework
 - **Protocol-Driven**: Adheres to A2A, MCP, and AP2 standards for secure, interoperable agent communication.
 - **Fintech Use Case**: Focused on automating and optimizing the loan application, evaluation, and approval workflow.
 - **Open for Contributions**: Designed as a collaborative project for engineering students and the open-source community.
+
+## Business Architecture
+
+The Distributed Decentralized Agentic AI framework (DAAIF) provides a foundational architecture for building scalable, autonomous AI systems where multiple specialized agents collaborate through standardized protocols (MCP, A2A, AP2). This framework is designed to be industry-agnostic, offering core capabilities such as agent-to-agent communication, secure OAuth-based authentication, distributed state management, and modular deployment options across different cloud providers. Organizations can leverage this framework to build their own distributed AI solutions by implementing domain-specific agents that inherit the framework's robust infrastructure for communication, security, and scalability, while adding their unique business logic and integrations.
+
+As a reference implementation, the framework showcases its capabilities through a comprehensive loan processing system, demonstrating how financial institutions can leverage DAAIF's architecture. This implementation includes specialized agents for loan application processing, credit scoring, document verification, and automated decisioning, all working together as autonomous units while maintaining regulatory compliance and data security. While the loan processing implementation serves as a practical example, the framework's core components – from the Controller Agent's routing capabilities to the standardized MCP server/client interactions – are designed to be repurposed for various industries, whether it's supply chain management, healthcare operations, or retail automation. This dual approach of providing both a generic framework and a specific implementation allows organizations to understand the practical application while having the flexibility to adapt the architecture for their unique business needs.
 
 ## Use Case Overview
 - **Loan Application Submission**
@@ -133,6 +132,8 @@ Notes:
 ## Approach of Development
 Development approach will be bottom-up. This means we will be starting by developing MCP Servers like Loan Process, Credit Score, Document Store, Rules Engine, Queue MCP. After that, we will build the Agents and Controller Agent.
 
+The project leverages open-source SDKs for each technology stack that fully implements the MCP specifications. These SDKs provide ready-to-use components for quickly creating new MCP servers that expose resources, prompts, and tools, as well as MCP clients capable of connecting to any MCP server with OAuth integration. The SDKs support standard transports including stdio and streamable HTTP, ensuring consistent communication patterns across different implementations. This approach significantly reduces development time while maintaining protocol compliance and interoperability across the distributed system.
+
 ## Technologies, Standards & SDKs
 - **Typescript**: ([MCP](https://github.com/modelcontextprotocol/typescript-sdk)), ([A2A](https://github.com/a2aproject/a2a-java))
 - **.NET, C#**: ([MCP](https://github.com/modelcontextprotocol/csharp-sdk)), ([A2A](https://github.com/a2aproject/a2a-dotnet))
@@ -196,7 +197,7 @@ This section will be regularly updated with code samples, configuration tips, an
 - **AWS**
 - **GCP**
 
-## Next Steps
+## Distributed Decentralized System Architecture **Next Steps**
 
 ### 1. High Availability & Fault Tolerance
 - Add Controller Agent redundancy using:
