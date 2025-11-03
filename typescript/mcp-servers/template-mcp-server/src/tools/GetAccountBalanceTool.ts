@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { BankAccountService } from "../services/bankAccountService.js";
+import { BankAccountService } from "../services/BankAccountService.js";
 
 // A tool is like an API endpoint that AI agents can call to perform specific actions.
 export class GetAccountBalanceTool {

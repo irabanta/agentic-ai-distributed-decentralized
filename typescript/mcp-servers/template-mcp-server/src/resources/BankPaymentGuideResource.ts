@@ -1,4 +1,4 @@
-import { McpServer, ResourceMetadata, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer, ResourceMetadata } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 // A resource exposes non-sensitive, read-only data or metadata to the model.
 // Resources can be used by AI agents to look up information.
@@ -12,7 +12,7 @@ export class BankPaymentGuideResource {
                 title: 'XYZ Bank Payment Guide',
                 description: 'A comprehensive guide to making payments through XYZ Bank.'
             } as ResourceMetadata,
-            async(uri, {}) => ({
+            async(uri) => ({
                 contents: [
                     {
                         uri: uri.href,
