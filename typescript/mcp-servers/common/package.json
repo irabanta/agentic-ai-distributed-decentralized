@@ -1,0 +1,36 @@
+{
+  "name": "@daaif/mcp-common",
+  "version": "1.0.0",
+  "description": "Common utilities and extensions for DAAIF MCP Servers",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./extensions": {
+      "import": "./dist/extensions/index.js",
+      "types": "./dist/extensions/index.d.ts"
+    },
+    "./extensions/zod": "./src/extensions/ZodExtensions.ts",
+    "./src/extensions/ZodExtensions.ts": "./src/extensions/ZodExtensions.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "MCP",
+    "common",
+    "utilities",
+    "extensions"
+  ],
+  "author": "irabatna (https://github.com/irabanta)",
+  "license": "ISC",
+  "dependencies": {
+    "@daaif/mcp-servers": "file:.."
+  }
+}

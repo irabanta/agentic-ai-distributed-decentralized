@@ -1,4 +1,4 @@
-import { AccountBalanceModel } from "../types/AccountBalanceModel.js";
+import { AccountBalanceModel } from "../../types/AccountBalanceModel.js";
 
 export class BankAccountService{
     async getAccountBalance(customer_id: string, account_number: string): Promise<AccountBalanceModel> {

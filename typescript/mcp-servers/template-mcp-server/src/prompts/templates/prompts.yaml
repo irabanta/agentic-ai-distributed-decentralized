@@ -1,0 +1,5 @@
+# prompts.yaml
+bank_balance_inquiry_prompt:
+  title: "XYZ Bank Account Balance Inquiry Prompt"
+  description: "Get prompt for inquiring the account balance for a specific customer and account number at XYZ Bank. Ask for missing info customer_id or account_number if not provided. Once fulfilled, call the 'get_account_balance' tool to retrieve the balance."
+  user_message: "Please provide the account balance for customer ID: {{customer_id}} and account number: {{account_number}} at XYZ Bank."

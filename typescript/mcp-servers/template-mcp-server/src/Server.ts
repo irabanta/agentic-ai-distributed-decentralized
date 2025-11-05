@@ -1,11 +1,15 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import express from 'express';
 
+// Import Zod extensions to initialize prototype methods
+import '@daaif/mcp-common';
+
 import { getServerConfig } from './config/config.js';
 import { ToolBootstrap } from './tools/bootstrap.js';
 import { ResourcesBootstrap } from './resources/bootstrap.js';
 import { PromptsBootstrap } from './prompts/bootstrap.js';
 import { McpServerBootstrap } from './mcpserver/bootstrap.js';
+import { AccountBalanceBootstrap } from './account-balance/bootstrap.js';
 
 async function startServer() {
     // Set up Express and HTTP transport
@@ -28,6 +32,9 @@ async function startServer() {
 
         // Register all prompts
         await PromptsBootstrap.bootstrap(server);
+
+        /** Register functionality wise */
+        await AccountBalanceBootstrap.bootstrap(server);
 
         // Start the MCP server with express transport
         await McpServerBootstrap.bootstrap(server, app);

@@ -1,5 +1,4 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { GetAccountBalanceTool } from './GetAccountBalanceTool.js';
 
 /** Manage all tools */
 export class ToolBootstrap {
@@ -11,12 +10,7 @@ export class ToolBootstrap {
         return this.instance.registerTools(server);
     }
     protected async registerTools(_server: McpServer): Promise<void> {
-        // Register tool implementations here
-        return new Promise((resolve) => {
-            GetAccountBalanceTool.register(_server);
-            //TODO: Add more tools here
-
-            resolve();
-        });
+        // TODO: Register general tool implementations here
+        return Promise.resolve();
     }
 }

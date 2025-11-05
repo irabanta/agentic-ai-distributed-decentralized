@@ -32,7 +32,7 @@ Available MCP servers:
 - loan-process-mcp-server
 - queue-mcp-server
 - rule-engine-mcp-server
-- server-template-mcp-server
+- template-mcp-server
 
 ## Using MCP Inspector
 
