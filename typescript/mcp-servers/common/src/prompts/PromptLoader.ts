@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { parse } from 'yaml';
-import { resolve } from 'path';
+import { resolve, isAbsolute } from 'path';
 
 interface PromptTemplate {
   title: string;
@@ -23,11 +23,14 @@ export class PromptLoader {
 
   /**
    * Get a PromptLoader instance for the specified YAML file.
-   * @param yamlFilePath - Absolute or relative path to the YAML prompts file
+   * @param yamlFilePath - Absolute or relative path to the YAML prompts file.
+   *                       For best practices, pass an absolute path using import.meta.url:
+   *                       join(dirname(fileURLToPath(import.meta.url)), 'relative/path/to/file.yaml')
    * @returns PromptLoader instance
    */
   static getInstance(yamlFilePath: string): PromptLoader {
-    const resolvedPath = resolve(yamlFilePath);
+    // If path is already absolute, use it; otherwise resolve against process.cwd()
+    const resolvedPath = isAbsolute(yamlFilePath) ? yamlFilePath : resolve(yamlFilePath);
     
     if (!PromptLoader.instances.has(resolvedPath)) {
       PromptLoader.instances.set(resolvedPath, new PromptLoader(resolvedPath));

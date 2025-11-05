@@ -5,6 +5,8 @@ import cors from 'cors';
 import { getServerConfig } from '../config/config.js';
 import { env } from 'process';
 import { setInterval, clearInterval } from 'timers';
+import { Transport } from '@modelcontextprotocol/sdk/shared/transport.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
 export class McpServerBootstrap {
     static instance: McpServerBootstrap;
@@ -12,7 +14,16 @@ export class McpServerBootstrap {
     /**Bootstrap to start the MCP server with express */
     public static async bootstrap(server: McpServer, app: express.Application): Promise<void> {
         this.instance = new McpServerBootstrap();
-        return this.instance.startServer(server, app);
+
+        // support both stdio and http transports
+        if (process.env.MCP_TRANSPORT === 'stdio' || !process.stdin.isTTY) {
+            // Use stdio transport for Claude Desktop
+            const transport = new StdioServerTransport();
+            await server.connect(transport);
+            console.error('MCP Server running in stdio mode');
+        } else {
+            return this.instance.startServer(server, app);
+        }
     }
     protected async startServer(server: McpServer, app: express.Application): Promise<void> {
         const config = getServerConfig();
@@ -41,24 +52,23 @@ export class McpServerBootstrap {
                 return;
             }
 
-            // Handle regular MCP requests
+            // Handle regular HTTP MCP requests
             const transport = new StreamableHTTPServerTransport({
                 sessionIdGenerator: undefined,
                 enableJsonResponse: true
             });
-
             res.on('close', () => {
                 transport.close();
             });
-
             await server.connect(transport);
             await transport.handleRequest(req, res, req.body);
+            console.error('MCP Server running in HTTP mode');
         });
 
         const port = parseInt(env.PORT || '3001');
         app.listen(port, () => {
             // eslint-disable-next-line no-console
-            console.log(`${config.name} MCP Server running on http://localhost:${port}/mcp`);
+            console.error(`${config.name} MCP Server running on http://localhost:${port}/mcp`);
         }).on('error', error => {
             // eslint-disable-next-line no-console
             console.error('Server error:', error);

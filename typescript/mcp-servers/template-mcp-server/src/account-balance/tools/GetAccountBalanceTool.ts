@@ -1,6 +1,9 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
+// Import Zod extensions to ensure they're loaded before use
+import "@daaif/mcp-common";
 import { BankAccountService } from "../services/BankAccountService.js";
+import { zodStrLength, zodStrRequired, zodStrUserMustInput } from "@daaif/mcp-common";
 
 // A tool is like an API endpoint that AI agents can call to perform specific actions.
 export class GetAccountBalanceTool {
@@ -11,8 +14,8 @@ export class GetAccountBalanceTool {
                 title: 'Get XYZ Bank Account Balance',
                 description: 'Retrieve the XYZ Bank account balance of a customer. CRITICAL: This tool should ONLY be called after you have obtained BOTH customer_id and account_number directly from the user. Do NOT call this tool with placeholder, example, or mock values like "CUST001" or "ACC123456". If you do not have real user-provided values, ask the user for them first.',
                 inputSchema: { 
-                    customer_id: z.string().xRequired("customer_id").xUserMustInput().xLength(6),
-                    account_number: z.string().xRequired("account_number").xUserMustInput().xLength(10)
+                    customer_id: zodStrLength(zodStrUserMustInput(zodStrRequired(z.string(), "customer_id")), 6),
+                    account_number: zodStrLength(zodStrUserMustInput(zodStrRequired(z.string(), "account_number")),10)
                 },
                 outputSchema: { 
                     balance: z.number(),

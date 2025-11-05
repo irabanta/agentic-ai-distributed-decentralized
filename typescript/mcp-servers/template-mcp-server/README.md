@@ -1,6 +1,15 @@
-# MCP Server Template
+# Template MCP Server
 
-This is an enterprise-grade Model Context Protocol (MCP) server template implementation in TypeScript, designed for deployment in Kubernetes environments with service mesh integration.
+This is a **reference implementation** of an enterprise-grade Model Context Protocol (MCP) server in TypeScript. Use this template as a starting point for creating new MCP servers in the monorepo.
+
+## Purpose
+
+This template demonstrates:
+- **Complete MCP server structure** with prompts, resources, and tools
+- **Integration with `@daaif/mcp-common`** for shared utilities
+- **Production-ready patterns** for configuration and error handling
+- **Banking example** showing real-world implementation
+- **Deployment patterns** for Kubernetes and service mesh environments
 
 ## Prerequisites
 

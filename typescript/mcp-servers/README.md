@@ -1,14 +1,37 @@
 # MCP Servers
 
-This directory contains multiple Model Context Protocol (MCP) servers, each serving a specific purpose in the distributed AI system.
+This directory implements a **monorepo structure** for Model Context Protocol (MCP) servers, each serving a specific purpose in the distributed AI system.
 
-## Server Template Reference
+## Key Structural Components
 
-The `template-mcp-server` folder contains a complete working MCP server implementation that can be used as a reference for creating new MCP servers. This template demonstrates best practices and includes basic configurations for quick start.
+### Common Package (`common/`)
+The `@daaif/mcp-common` package provides shared utilities across all MCP servers:
+- **Zod Extensions**: Custom validation methods for enhanced schema definitions
+- **Prompt Loader**: Centralized YAML-based prompt management
+- Shared types and interfaces for consistency
+
+### Template Server (`template-mcp-server/`)
+A complete, production-ready reference implementation demonstrating:
+- **Prompts**: AI interaction entry points with parameter validation
+- **Resources**: Static reference information for AI context
+- **Tools**: Business logic implementation with service integration
+- Enterprise-grade configuration and deployment patterns
 
 ## Development
 
-Each MCP server can be run independently in development mode. To start a specific server:
+### Initial Setup
+
+1. Build the common package first (required):
+   ```bash
+   cd common
+   npm install
+   npm run build
+   cd ..
+   ```
+
+### Running Individual Servers
+
+Each MCP server can be run independently in development mode:
 
 1. Navigate to the desired server directory:
    ```bash
@@ -25,14 +48,24 @@ Each MCP server can be run independently in development mode. To start a specifi
    npm run dev
    ```
 
-Available MCP servers:
-- ap2-payment-mcp-server
-- credit-score-mcp-server
-- document-store-mcp-server
-- loan-process-mcp-server
-- queue-mcp-server
-- rule-engine-mcp-server
-- template-mcp-server
+4. To run in stdio protocol
+   ```bash
+   $env:MCP_TRANSPORT="stdio"; npx tsx src\Server.ts
+   ```
+
+### Available MCP Servers
+
+**Infrastructure:**
+- `common` - Shared utilities package
+- `template-mcp-server` - Reference implementation
+
+**Domain Services:**
+- `ap2-payment-mcp-server` - Payment processing and AP2 protocol integration
+- `credit-score-mcp-server` - Credit scoring and risk assessment
+- `document-store-mcp-server` - Document management and verification
+- `loan-process-mcp-server` - Loan application workflow
+- `queue-mcp-server` - Message queue management
+- `rule-engine-mcp-server` - Business rules evaluation
 
 ## Using MCP Inspector
 
@@ -70,3 +103,26 @@ To prepare and run a server in production:
    ```
 
 The production build will create optimized JavaScript files in the `dist` directory and start the server with production configurations.
+
+## How to configure in Claude Desktop?
+
+Goto the profile icon on left botton of the Claude Desktop and then goto settings -> Developer.
+
+Edit the config json for MCP Servers. Below is one working sample which can be modified for all mcp-servers
+
+```json
+{
+  "mcpServers": {
+    "template-mcp-server": {
+      "command": "npx",
+      "args": [
+        "tsx",
+        "d:\\personal\\projects\\agentic-ai-distributed-decentralized\\typescript\\mcp-servers\\template-mcp-server\\src\\Server.ts"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  }
+}
+```

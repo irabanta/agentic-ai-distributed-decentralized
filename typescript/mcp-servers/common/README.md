@@ -1,10 +1,18 @@
 # @daaif/mcp-common
 
-Common utilities and extensions for DAAIF MCP Servers.
+Shared utilities package for all DAAIF MCP Servers in the monorepo.
+
+## Purpose
+
+This package centralizes common functionality across all MCP servers:
+- **Zod Extensions**: Enhanced validation for consistent input handling
+- **Prompt Management**: YAML-based prompt loading and templates
+- **Shared Types**: Common interfaces and types for type safety
+- **Utility Functions**: Reusable helper functions
 
 ## Installation
 
-This package is part of the DAAIF MCP Servers monorepo and is consumed as a workspace dependency.
+This package is part of the DAAIF MCP Servers monorepo. Build it first before using other servers:
 
 Add to your MCP server's `package.json`:
 ```json

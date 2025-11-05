@@ -5,9 +5,7 @@ import express from 'express';
 import '@daaif/mcp-common';
 
 import { getServerConfig } from './config/config.js';
-import { ToolBootstrap } from './tools/bootstrap.js';
 import { ResourcesBootstrap } from './resources/bootstrap.js';
-import { PromptsBootstrap } from './prompts/bootstrap.js';
 import { McpServerBootstrap } from './mcpserver/bootstrap.js';
 import { AccountBalanceBootstrap } from './account-balance/bootstrap.js';
 
@@ -24,14 +22,8 @@ async function startServer() {
     });
 
     try {
-        // Register all tools
-        await ToolBootstrap.bootstrap(server);
-
         // Register all resources
         await ResourcesBootstrap.bootstrap(server);
-
-        // Register all prompts
-        await PromptsBootstrap.bootstrap(server);
 
         /** Register functionality wise */
         await AccountBalanceBootstrap.bootstrap(server);
