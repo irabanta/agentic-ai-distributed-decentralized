@@ -296,6 +296,11 @@ This section will be regularly updated with code samples, configuration tips, an
   - AWS: CloudFormation + CDK
   - GCP: Deployment Manager + Terraform
 
+## 9. AI (GenAI) Cost Calculation
+Cost For Chat = Base price for 1000 tokens X Number of Tokens Input Ooutput
+
+Cost for Training Fine Tune = Base Price for 1000 tokens X Number of Tokens X Number of epochs trained
+
 ## Getting Started
 1. **Clone the Repository**
 2. **Chose your tech stack from the repository (example: typescript)**
